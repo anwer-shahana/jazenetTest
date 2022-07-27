@@ -67,4 +67,3 @@ class LettersAdapter(private val clickListener: LetterClickListener) :
 class LetterClickListener(val clickListener: (data: String, position: Int) -> Unit) {
     fun onClick(data: String, position: Int) = clickListener(data, position)
 }
-
