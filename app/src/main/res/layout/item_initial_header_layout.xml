@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="viewModel"
+            type="com.example.testjazenet.provider.CompanyContactList" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:background="@color/white"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            loadImageFromUrl="@{viewModel.logo}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/quick_sand_bold"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:text="@{viewModel.name.trim()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toTopOf="@+id/imgProfile"
+            tools:text="Shahana" />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/quick_sand_semi_bold"
+            android:maxLines="1"
+            android:text="@{viewModel.category.trim()}"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:text="Android" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
